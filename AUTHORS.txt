@@ -1,0 +1,3 @@
+The primary author of django_adaptive is Guillaume Pousseo 
+
+email: guillaumepousseo@revsquare.com
