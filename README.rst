@@ -28,6 +28,8 @@ And run:
 Setup
 *****
 
+Before starting, make sure you have correctly setup django-mobi: https://pypi.python.org/pypi/django-mobi
+
 Django adaptive basicaly overwrites django default filesystem and app_directories loaders. You can pick the overwritten loader you want to use separately and use them concurently with the former django loaders.
 
 The first step is to add the app in your installed apps list in settings.py
