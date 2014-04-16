@@ -3,7 +3,7 @@ import threading
 
 from django.conf import settings
 
-# Setup constants with directories location prefixes, by default
+""" Setup constants with directories location prefixes, by default """
 DESKTOP = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_DESKTOP', '')
 TABLET = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_TABLET', '')
 MOBILE = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_MOBILE', '')
