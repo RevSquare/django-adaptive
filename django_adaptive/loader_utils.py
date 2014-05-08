@@ -15,8 +15,6 @@ def ParseTemplateName(template_name):
     """
     request = get_current_request()
     prefix = DESKTOP
-    print 'REQ!!!'
-    print request
     if hasattr(request, 'mobile') and request.mobile:
         prefix = MOBILE
     elif hasattr(request, 'tablet') and request.tablet:
