@@ -1,7 +1,7 @@
 import os
-import threading
 
 from django.conf import settings
+from .middleware import get_current_request
 
 """ Setup constants with directories location prefixes, by default """
 DESKTOP = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_DESKTOP', '')
@@ -13,10 +13,10 @@ def ParseTemplateName(template_name):
     """
     Adds the prefix to a template name using the django request object.
     """
-    thread_locals = threading.local()
-    request = getattr(thread_locals, 'request', None)
+    request = get_current_request()
     prefix = DESKTOP
-
+    print 'REQ!!!'
+    print request
     if hasattr(request, 'mobile') and request.mobile:
         prefix = MOBILE
     elif hasattr(request, 'tablet') and request.tablet:

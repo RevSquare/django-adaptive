@@ -6,7 +6,7 @@ reload(sys).setdefaultencoding('Utf-8')
 
 setup(
     name='django-adaptive',
-    version='0.0.1',
+    version='0.0.2',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='Manages to load templates according to the type of device to\

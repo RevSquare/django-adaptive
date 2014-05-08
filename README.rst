@@ -38,11 +38,11 @@ The first step is to add the app in your installed apps list in settings.py
 
     INSTALLED_APPS = (
         ...
-        'django-adaptive'
+        'django_adaptive'
         ...
     )
 
-The you will need to declare the loaders you want to add in your settings.py file
+Then you will need to declare the loaders you want to add in your settings.py file
 
 .. code-block::  python
 
@@ -51,6 +51,17 @@ The you will need to declare the loaders you want to add in your settings.py fil
         'django-adaptive.app_directories.Loader',
         #'django.template.loaders.filesystem.Loader',
         #'django.template.loaders.app_directories.Loader',
+    )
+
+Final step is to add ThreadLocal Middleware
+
+.. code-block:: python
+
+    MIDDLEWARE_CLASSES = (
+        ...
+        'mobi.middleware.MobileDetectionMiddleware',
+        'django_adaptive.middleware.ThreadLocals',
+        ...
     )
     
 ******************************
