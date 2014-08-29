@@ -9,15 +9,31 @@ TABLET = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_TABLET', '')
 MOBILE = getattr(settings, 'ADAPTIVE_TEMPLATE_DIRECTORIES_MOBILE', '')
 
 
-def ParseTemplateName(template_name):
+def get_template_suffix():
     """
-    Adds the prefix to a template name using the django request object.
+    Returns template suffix based on settings and user agent used.
     """
     request = get_current_request()
-    prefix = DESKTOP
-    if hasattr(request, 'mobile') and request.mobile:
-        prefix = MOBILE
-    elif hasattr(request, 'tablet') and request.tablet:
-        prefix = TABLET
 
-    return os.path.join(prefix, template_name)
+    suffix = DESKTOP
+
+    if hasattr(request, 'mobile') and request.mobile:
+        suffix = MOBILE
+
+    elif hasattr(request, 'tablet') and request.tablet:
+        suffix = TABLET
+
+    return suffix
+
+
+def get_template_dirs(template_dirs):
+    """
+    Returns list of templates suffixed with appropriate string
+    based on settings and user agent.
+    """
+
+    suffix = get_template_suffix()
+
+    suffixed_dirs = [os.path.join(d, suffix) for d in template_dirs]
+
+    return suffixed_dirs + list(template_dirs)
