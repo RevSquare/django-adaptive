@@ -17,11 +17,11 @@ def get_template_suffix():
 
     suffix = DESKTOP
 
-    if hasattr(request, 'mobile') and request.mobile:
-        suffix = MOBILE
-
-    elif hasattr(request, 'tablet') and request.tablet:
+    if hasattr(request, 'tablet') and request.tablet:
         suffix = TABLET
+
+    elif hasattr(request, 'mobile') and request.mobile:
+        suffix = MOBILE
 
     return suffix
 
