@@ -12,17 +12,17 @@ Install
 
 It is strongly recommanded to install this theme from GIT with PIP onto you project virtualenv.
 
-Add this line to your requirements.txt file:
+From PyPi
+
+.. code-block::  shell-session
+
+    pip  install django-adaptive
+
+From Github
 
 .. code-block::  shell-session
 
     -e git+https://github.com/RevSquare/django-adaptive#egg=django-adaptive
-
-And run:
-
-.. code-block::  shell-session
-
-    pip install -r requirements.txt
 
 *****
 Setup
@@ -105,3 +105,14 @@ In case you would need to combine devices type in a similar directory, you just 
     ADAPTIVE_TEMPLATE_DIRECTORIES_MOBILE = 'mobile'
     
 This would render the same type of template for both tablets and mobile devices.
+
+
+*****
+LINKS
+*****
+
+Development:
+    https://github.com/RevSquare/django-adaptive
+
+Package:
+    https://pypi.python.org/pypi/django-adaptive
