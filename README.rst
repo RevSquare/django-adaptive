@@ -53,6 +53,18 @@ Then you will need to declare the loaders you want to add in your settings.py fi
         #'django.template.loaders.app_directories.Loader',
     )
 
+It's also possible to use cached loader.
+It works with django 1.7.x
+
+.. code-block::  python
+
+    TEMPLATE_LOADERS = (
+    ('django_adaptive.cached.Loader', (
+        'django_adaptive.filesystem.Loader',
+        'django_adaptive.app_directories.Loader',
+        )),
+    )
+
 Final step is to add ThreadLocal Middleware
 
 .. code-block:: python
