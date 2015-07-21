@@ -1,7 +1,16 @@
 #! /usr/bin/env python
-from distutils.core import setup
-from setuptools import find_packages
 import sys
+from distutils.core import setup
+
+# python2 and python3 support
+try:
+    reload
+except NameError:
+    from imp import reload
+
+
+from setuptools import find_packages
+
 reload(sys).setdefaultencoding('Utf-8')
 
 
