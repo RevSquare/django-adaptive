@@ -16,7 +16,7 @@ From PyPi
 
 .. code-block::  shell-session
 
-    pip  install django-adaptive
+    pip install django-adaptive
 
 From Github
 
