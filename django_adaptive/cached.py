@@ -7,25 +7,14 @@ from django.template.loaders.cached import Loader as CachedLoader
 from django_adaptive.loader_utils import get_template_suffix
 
 
-class AdaptiveTemplateCache(dict):
-
-    def get_device(self):
-        return get_template_suffix()
-
-    def get_key(self, key):
-        return key + self.get_device()
-
-    def __getitem__(self, key):
-        return super(AdaptiveTemplateCache, self).__getitem__(
-            self.get_key(key))
-
-    def __setitem__(self, key, value):
-        return super(AdaptiveTemplateCache, self).__setitem__(
-            self.get_key(key), value)
-
-
 class Loader(CachedLoader):
 
-    def __init__(self, loaders):
-        super(Loader, self).__init__(loaders)
-        self.template_cache = AdaptiveTemplateCache()
+    def cache_key(self, template_name, template_dirs):
+        key = super(Loader, self).cache_key(template_name, template_dirs)
+        return key + self.adaptive_get_key(key)
+
+    def adaptive_get_device(self):
+        return get_template_suffix()
+
+    def adaptive_get_key(self, key):
+        return key + self.adaptive_get_device()
