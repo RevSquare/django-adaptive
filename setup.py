@@ -12,12 +12,9 @@ except NameError:
 else:
     reload(sys).setdefaultencoding('utf-8')
 
-
-
-
 setup(
     name='django-adaptive',
-    version='1.0.0',
+    version='1.0.1',
     author='Guillaume Pousseo <guillaumepousseo@revsquare.com>,\
         Tomasz Roszko <tomaszroszko@revsquare.com>,\
         Rafal Selewonko <rafalselewonko@revsquare.com>',

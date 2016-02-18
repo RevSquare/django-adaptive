@@ -1,5 +1,5 @@
 from django.template.loaders.app_directories import Loader \
-        as AppDirectoriesLoader
+    as AppDirectoriesLoader
 from .loader_utils import get_template_dirs
 
 try:
@@ -7,7 +7,6 @@ try:
 except ImportError:
     from django.template.utils import get_app_template_dirs
     app_template_dirs = get_app_template_dirs('templates')
-
 
 
 class Loader(AppDirectoriesLoader):
