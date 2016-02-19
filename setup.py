@@ -14,7 +14,7 @@ else:
 
 setup(
     name='django-adaptive',
-    version='1.0.1',
+    version='1.0.2',
     author='Guillaume Pousseo <guillaumepousseo@revsquare.com>,\
         Tomasz Roszko <tomaszroszko@revsquare.com>,\
         Rafal Selewonko <rafalselewonko@revsquare.com>',
